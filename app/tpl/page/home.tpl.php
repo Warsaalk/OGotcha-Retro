@@ -1,4 +1,7 @@
 <?php
+	use Plinth\Response\Response;
+	/* @var $self Response */
+
 	$preview = isset($renderedPreview);
 ?>
 	<h1 id="ogotcha-title" class="title">
@@ -9,7 +12,7 @@
 	<form method="post" action="">
 		<div id="cr-container">
 			<div id="cr-left" class="cr-textareas">
-				<textarea name="report" id="cr-input" rows="24" cols="80"></textarea>
+				<textarea name="report" id="cr-input" rows="24" cols="80"><?= $self->Main()->getValidator()->getVariable('report')?:''; ?></textarea>
 			</div>
 			<div id="cr-right" class="cr-textareas">
 				<div id="cr-title"><span><?= $__("Title:"); ?></span><input placeholder="<?= $__("Title Placeholder") ?>" name="title" id="title" value="<?= isset($renderedTitle) ? $renderedTitle : ''; ?>" style="width: 350px;"></div>
@@ -56,29 +59,29 @@
 			</div>
 			<div class="option inner-block">
 				<h2><?= $__("Raids") ?></h2>
-				<textarea name="raids" id="raids" rows="5" cols="100"></textarea>
+				<textarea name="raids" id="raids" rows="5" cols="100"><?= $self->Main()->getValidator()->getVariable('raids')?:''; ?></textarea>
 			</div>
 			<div class="players clearfix">
 				<div class="player attacker">
 					<h1><?= $__("Attackers") ?></h1>
 					<div class="option inner-block">
 						<h2><?= $__("Harvest Reports") ?></h2>
-						<textarea name="attacker_harvest" id="attacker_harvest_reports" rows="5" cols="100"></textarea>
+						<textarea name="attacker_harvest" id="attacker_harvest_reports" rows="5" cols="100"><?= $self->Main()->getValidator()->getVariable('attacker_harvest')?:''; ?></textarea>
 					</div>
 					<div class="option inner-block">
 						<h2><?= $__("Deuterium Costs") ?></h2>
-						<textarea name="attacker_deuterium" id="attacker_deuterium" rows="5" cols="100"></textarea>
+						<textarea name="attacker_deuterium" id="attacker_deuterium" rows="5" cols="100"><?= $self->Main()->getValidator()->getVariable('attacker_deuterium')?:''; ?></textarea>
 					</div>
 				</div>
 				<div class="player defender">
 					<h1><?= $__("Defenders") ?></h1>
 					<div class="option inner-block">
 						<h2><?= $__("Harvest Reports") ?></h2>
-						<textarea name="defender_harvest" id="defender_harvest_reports" rows="5" cols="100"></textarea>
+						<textarea name="defender_harvest" id="defender_harvest_reports" rows="5" cols="100"><?= $self->Main()->getValidator()->getVariable('defender_harvest')?:''; ?></textarea>
 					</div>
 					<div class="option inner-block">
 						<h2><?= $__("Deuterium Costs") ?></h2>
-						<textarea name="defender_deuterium" id="defender_deuterium" rows="5" cols="100"></textarea>
+						<textarea name="defender_deuterium" id="defender_deuterium" rows="5" cols="100"><?= $self->Main()->getValidator()->getVariable('defender_deuterium')?:''; ?></textarea>
 					</div>
 				</div>
 			</div>
