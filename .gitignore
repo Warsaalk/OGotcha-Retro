@@ -1,0 +1,8 @@
+/.buildpath
+/.project
+/.settings/
+/app/assets/node_modules/
+/app/log/
+/composer.phar
+/vendor/
+/.idea/

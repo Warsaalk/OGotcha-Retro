@@ -1,0 +1,14 @@
+{
+	"page_home" : 
+	{
+		"path" : "",
+		"type" : "page",
+		"template" : "page/home",
+		"methods" : ["GET", "POST"],
+		"actions" : {
+			"POST" : "cr"
+		},
+		"public" : true,
+		"default" : true
+	}
+}	

@@ -1,0 +1,16 @@
+{
+	"name" : "OGotcha Retro",
+	"description" : "OGame combat report converter",
+	"type" : "project",
+	"require" : {
+		"plinth/plinth" : "v0.1.5"
+	},
+	"autoload" : {
+		"psr-4": {
+			"Kokx\\" : "src/Kokx"
+		}
+	},
+    "scripts" : {
+    	"post-install-cmd" : "PlinthScripts\\ComposerHandler::initProject"
+    }
+}

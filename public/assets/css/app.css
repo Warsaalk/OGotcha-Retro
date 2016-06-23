@@ -1,0 +1,154 @@
+/**   OGotcha, a combat report converter for Ogame
+ *    Copyright (C) 2014  Klaas Van Parys
+ *
+ *   This program is free software: you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *   the Free Software Foundation, either version 3 of the License, or
+ *   (at your option) any later version.
+ *   
+ *    This program is distributed in the hope that it will be useful,
+ *   but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *   GNU General Public License for more details. 
+ *   
+ *    You should have received a copy of the GNU General Public License
+ *   along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ *   
+ *   This program is based on the Kokx's CR Converter � 2009 kokx: https://github.com/kokx/kokx-converter
+ *   
+ *   This file is not part of the original program and therefore it only inherits this copyright: Copyright (C) 2014 Klaas Van Parys
+ */
+ 
+ /*** General styles ***/
+* { padding: 0; margin: 0; }
+body { color: #ddd;
+	background-color: #1E2B39;
+	background-image: url(../img/bg.jpg);
+	background-repeat: no-repeat;
+	background-position: top center;
+	background-size: 100%;
+	font-weight: 300;
+	font-family: Yantramanav, Helvetica, sans-serif;
+	height: 100%;
+	font-size: 13px;
+}
+a { color: #ddd; }
+
+
+h1 { font-size: 25px; }
+h2 { font-size: 19px; }
+select,
+input,
+textarea{ border: 0; padding: 5px; background: #000; color: #ddd; }
+
+.title { font-family: Rajdhani, Helvetica, sans-serif; font-weight: 300; font-size: 7em; text-shadow: 0px 1px 2px rgba(0, 0, 0, 1); }
+#ogotcha-title { margin: 50px 0; }
+#ogotcha-title a { color: #fff; text-decoration: none; }
+
+/*** Main container ***/
+#main-container{ width: 950px; margin: 0 auto 20px; }
+	
+	/*** Language styles ***/
+	#lang-en{ margin-left: 10px; }
+	.lang {	float: left; background: #161920; }
+	.lang-selected{	background: #252e37; }
+		.lang a { display: block; padding: 0 15px 10px; text-align: center; text-decoration: none; color: #ddd; }
+		.lang a:hover{ background: #576d7b; }
+	
+	/*** Add style ***/
+	#adsense{ float: right; width: 728px; }
+	
+	.new { color: #f00; font-style: italic; }
+	
+	/*** Header style ***/
+	#header{ margin: 30px 0; }
+		#header h1 { display: inline-block; line-height: 41px; }
+			#header h1 a { font: inherit; text-decoration: none; }
+		#agslord { float: right; background: #161920; width: 275px; height: 41px; line-height: 40px; cursor: pointer; font-weight: bold; text-align: center; }
+			#agslord a { font-size: 1.3em; display: block; }
+			#agslord a:hover { background: #576d7b; }
+	
+	/*** Invalid cr styles ***/
+	#cr-invalid{ width: 950px; padding-bottom: 10px; margin: 0 auto; }
+		#cr-invalid #red{ background-color: #F0947B;	padding: 5px; height: 30px; }
+			#cr-invalid #red div{ line-height: 30px; vertical-align: middle; float: left; }
+			#cr-invalid p{ font-weight: bold; margin-left: 10px; color: #cf1b27; }
+			#cr-invalid img{ height: 30px; width: 30px; border: 0; }
+	
+	/*** Cr containt styles ***/
+	.cr-textareas{ width: 400px; padding: 30px; background: #161920; }
+		.cr-textareas textarea{ width: 390px; border: 0; }
+	#cr-left{ float: left; }
+	#cr-right{ float: right; }
+			#cr-title span{ line-height: 26px; font-weight: bold; }
+			#cr-title input{ border: 0; float: right; }
+		#cr-left textarea{ height: 300px;}
+		#cr-right textarea{ margin-top: 10px; height: 264px; }
+	
+	/*** Submit cr styles ***/
+	#submit-container{ margin: 10px 0; }
+		#submit-container #submit { float: left; }
+		#submit-container #goto-preview { float: right; margin-top: 10px; }
+			#submit-container a { text-decoration: none }
+			
+		#submit-container a,
+		#submit-container input{ border: 0; background: #161920; padding: 10px; cursor: pointer; font-weight: bold; }
+		#submit-container a:hover,
+		#submit-container input:hover{ background: #576d7b; }
+		
+	/*** Options styles ***/
+	#options-container{ }
+		#options-container .option{ }
+			#options-container .option #option-table{ width: 850px; margin-top: 10px; }
+			#options-container .option #option-table td { min-height: 28px; height: 28px; }
+			#options-container .option textarea{ margin-top: 20px; border: 0; width: 840px; }
+		#options-container .players { margin-top: 20px; }		
+			#options-container .player { width: 425px; }
+			#options-container .player h1 { margin-bottom: 20px; }
+			#options-container .player textarea{ width: 375px; }
+			#options-container .attacker { float: left; padding-right: 19px; border-right: 1px solid #444; }
+			#options-container .defender { float: right; }
+			
+	/*** Preview styles ***/
+	#preview-container{ }
+
+
+	/*** Info page styles ***/
+	
+	#info-sign { display: block; text-decoration: none; position: fixed; top: 30%; right: 0; margin-right: -110px; font-size: 1.6em; padding: 10px 20px; background: #252e37; border-top-left-radius: 25px; border-bottom-left-radius: 25px; }
+	#info-sign:hover { margin-right: 0; }
+	#info-sign span { font-size: 2em; font-weight: bold; padding-right: 10px; }
+	
+	#infopage { margin: 30px 0 20px; padding: 30px 30px 20px; background: #161920; }
+	#infopage ul { list-style: none; }
+	#infopage ul li { margin-top: 20px; }
+	#infopage ul li p { margin-top: 10px; }
+	
+	footer { margin: 0 auto; width: 950px; padding-bottom: 20px; }
+
+.outer-block { margin: 30px 0 20px; padding: 30px 30px 20px; background: #161920; }
+.inner-block { padding: 20px; margin: 0 0 10px; background: #252e37; }
+
+.info { margin-top: 20px; position: relative; overflow: hidden; transition: 1s; height: 43px; }
+.info .info-content { padding: 5px; height: 32px; line-height: 32px; border-bottom: 1px solid; border-radius: 3px; }
+.info .information { background: #76afdc; border-color: #5c8db2; }
+.info .success { background: #8ec641; border-color: #80b23a; }
+.info .warning { background: #fddb55; border-color: #e8c64e; }
+.info .error { background: #F0947B; border-color: #d5684d; }
+.info img { height: 32px; width: 32px; border: 0; display: block; position: absolute; }
+.info span { font-weight: bold; vertical-align: middle; display: inline-block; font-size: 1em; line-height: normal; padding: 0 30px 0 40px; }
+.info .information span,
+.info .success span { color: #fff; text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3); }
+.info .warning span ,
+.info .error span { color: #222; text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.3); }
+.info .close-info { position: absolute; background: #555; border-bottom: 1px solid #333; height: 18px; width: 18px; text-align: center; top: 12px; right: 12px; color: #ddd; font-weight: bold; cursor: pointer; }
+
+.info-small { margin-top: 10px; height: auto; }
+.info-small .info-content { padding: 4px 4px 3px; height: auto; line-height: normal; }
+.info-small span { font-weight: normal; padding: 0 30px 0 0; }
+.info-small .close-info { top: 3px; right: 3px; }
+
+.clear { clear: both; }
+.clearfix:before, .clearfix:after { content: ""; display: table; }
+.clearfix:after { clear: both; }
+.clearfix { *zoom: 1; }

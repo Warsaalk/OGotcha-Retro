@@ -1,0 +1,52 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "hash": "d8af457fadafbfd98bcf8d8ed61c0df1",
+    "content-hash": "4c1b393f9a3a09b6df43500b02ecb246",
+    "packages": [
+        {
+            "name": "plinth/plinth",
+            "version": "v0.1.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Warsaalk/Plinth.git",
+                "reference": "59ecfbbc398e0d7cb37a35d6ae04edaa132507aa"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Warsaalk/Plinth/zipball/59ecfbbc398e0d7cb37a35d6ae04edaa132507aa",
+                "reference": "59ecfbbc398e0d7cb37a35d6ae04edaa132507aa",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Plinth\\": "src/Plinth",
+                    "PlinthScripts\\": "src/PlinthScripts"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Klaas Van Parys"
+                }
+            ],
+            "description": "A light weight PHP framework",
+            "time": "2016-06-23 18:05:05"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}
