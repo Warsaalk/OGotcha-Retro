@@ -50,16 +50,11 @@ class HarvestReport
         $reports = array();
 
         /**
-         Example report:
-		 
-		 Je (1200) recycler(s) hebben een totale opslagcapaciteit van 24.000.000. 
-		 In het bestemmingsveld [2:188:7] zweven 0 metaal en 5.000 kristal in de ruimte. 
-		 Je hebt 0 metaal en 5.000 kristal opgehaald.
+         * Example report:
+		 * 
+		 * 06-24 08:52:19 Fleet Harvesting report from DF on [2:150:11] .
+		 * Your 2 recycler(s) have a total cargo capacity of 40.000. At the target, 10.800 metal and 6.900 crystal are floating in space. You have harvested 10.800 metal and 6.900 crystal.
          */
-        
-        /*$regex  = 'Je \(([0-9.]*?)\) recycler\(s\) hebben een totale opslagcapaciteit van ([0-9.]*?).';
-		$regex .= 'In het bestemmingsveld \[([0-9.]*?:[0-9.]*?:[0-9.]*?)\] zweven ([0-9.]*?) metaal en ([0-9.]*?) kristal in de ruimte.';
-        $regex .= 'Je hebt ([0-9.]*?) metaal en ([0-9.]*?) kristal opgehaald.';*/
 		
 		$regex = $dict->get('regex.harvest');
 
@@ -69,13 +64,13 @@ class HarvestReport
 		
         foreach ($matches as $match) {
             $reports[] = new \Kokx\Model\HarvestReport(
-                (float) str_replace('.', '', $match[1]),
                 (float) str_replace('.', '', $match[2]),
                 (float) str_replace('.', '', $match[3]),
+                (float) str_replace('.', '', $match[1]),
                 (float) str_replace('.', '', $match[4]),
                 (float) str_replace('.', '', $match[5]),
                 (float) str_replace('.', '', $match[6]),
-		(float) str_replace('.', '', $match[7])
+				(float) str_replace('.', '', $match[7])
             );
         }
 

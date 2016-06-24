@@ -365,6 +365,11 @@ $lang['regex.harvest'] = 'Your\s*recycler\(s\)\s*\(([0-9.]*?)\)\s*have\s*a\s*tot
 $lang['regex.harvest'] .= 'At\s*the\s*target\s*\[([0-9.]*?:[0-9.]*?:[0-9.]*?)\],\s*([0-9.]*?)\s*metal\s*and\s*([0-9.]*?)\s*crystal\s*are\s*floating\s*in\s*space.\s*';
 $lang['regex.harvest'] .= 'You\s*have\s*harvested\s*([0-9.]*?)\s*metal\s*and\s*([0-9.]*?)\s*crystal.';
 
+//Harvest Regex
+$lang['regex.harvest'] = '[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}:[0-9]{2} Fleet Harvesting report from DF on \[([0-9.]*?:[0-9.]*?:[0-9.]*?)\] .\s*';
+$lang['regex.harvest'] .= 'Your ([0-9.]*?) recycler\(s\) have a total cargo capacity of ([0-9.]*?). At the target, ([0-9.]*?) metal and ([0-9.]*?) crystal are floating in space.\s*';
+$lang['regex.harvest'] .= 'You have harvested ([0-9.]*?) metal and ([0-9.]*?) crystal.';
+
 //Combat Regex
 $lang['regex.start'] = 'At';
 $lang['regex.time'] = '^At ([0-9]{2})-([0-9]{2}) ([0-9]{2}):([0-9]{2}):([0-9]{2}) the following fleets met in battle::';
